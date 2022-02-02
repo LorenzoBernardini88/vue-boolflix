@@ -1,5 +1,8 @@
 <template>
-    <div></div>
+    <div class="form_cont">
+        <input type="text">
+        <button>Search</button>
+    </div>
 </template>
 
 <script>
