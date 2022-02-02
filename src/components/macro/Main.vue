@@ -1,6 +1,7 @@
 <template>
     <main>
-        <InputText/>
+        <InputText
+        @ricerca="filtraData"/>
     </main>
 </template>
 
@@ -15,29 +16,37 @@ export default {
     data(){
         return{
             apiUrl:"https://api.themoviedb.org/3/search/movie",
-            dataArray:[]
+            dataArray:[],
+            film: ""
         }
     },
     created(){
-        this.getFilm();
+        // this.getFilm();
     },
     methods:{
         getFilm(){
             axios.get(this.apiUrl, {
                 params: {
                 api_key:"77b419d801283a9b373f36475ac132b1",
-                query: 'zorro'
+                query: this.film
                 }
             })
-        .then((risposta)=> {
-            this.dataArray = risposta.data.results;
-            console.log(this.dataArray);
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+            .then((risposta)=> {
+                this.dataArray = risposta.data.results;
+                console.log(this.dataArray);
+                
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+        },
+        filtraData(valoreRicerca){
+            this.film = valoreRicerca;
+            this.getFilm();
         }
-    }
+        
+    },
+    
 }
 </script>
 

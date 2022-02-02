@@ -1,13 +1,22 @@
 <template>
     <div class="form_cont">
-        <input type="text">
-        <button>Search</button>
+        <input type="text"
+        v-model="ValoreText" 
+        >
+        <button
+        @click.prevent="$emit('ricerca',ValoreText)"
+        >Search</button>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'InputText'
+    name: 'InputText',
+    data(){
+        return{
+            ValoreText : ""
+        }
+    }
 }
 </script>
 
