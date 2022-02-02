@@ -2,16 +2,22 @@
     <main>
         <InputText
         @ricerca="filtraData"/>
+        <InfoFilm
+        v-for="(elemento,indice) in dataArray"
+        :key="indice"
+        :info="elemento"/>
     </main>
 </template>
 
 <script>
 import axios from 'axios';
 import InputText from "../commons/InputText.vue";
+import InfoFilm from "../commons/InfoFilm.vue";
 export default {
     name:'Main',
     components:{
-        InputText
+        InputText,
+        InfoFilm
     },
     data(){
         return{
