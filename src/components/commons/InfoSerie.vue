@@ -2,6 +2,7 @@
     <ul class="info_serie">
         <li>Titolo Originale: {{serie.original_name}}</li>
         <li>Titolo: {{serie.name}}</li>
+        <li><img :src="getCover('w342')+serie.poster_path" alt=""></li>
         <li><img :src="flagLanguage()" alt=""></li>
         <li>Voto: {{serie.vote_average}}</li>
     </ul>
@@ -25,6 +26,10 @@ export default {
             }else{
                 return require("../../assets/img/flat_icon/saudi-arabia.png")
             }
+        },
+        getCover(size){
+            return `https://image.tmdb.org/t/p/${size}`
+            
         }
     }
 }
