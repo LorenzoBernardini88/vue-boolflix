@@ -1,26 +1,26 @@
 <template>
-    <ul class="info_film">
-        <li>Titolo Originale: {{film.original_title}}</li>
-        <li>Titolo: {{film.title}}</li>
+    <ul class="info_serie">
+        <li>Titolo Originale: {{serie.original_name}}</li>
+        <li>Titolo: {{serie.name}}</li>
         <li><img :src="flagLanguage()" alt=""></li>
-        <li>Voto: {{film.vote_average}}</li>
+        <li>Voto: {{serie.vote_average}}</li>
     </ul>
 </template>
 
 <script>
 export default {
-    name:'infoFilm',
+    name:'infoSerie',
     props:{
-        film: Object
+        serie: Object
         
     },
     methods:{
         flagLanguage(){
-            if(this.film.original_language == 'it'){
+            if(this.serie.original_language == 'it'){
                 return require("../../assets/img/flat_icon/italy.png")
-            }else if(this.film.original_language == 'en'){
+            }else if(this.serie.original_language == 'en'){
                 return require("../../assets/img/flat_icon/united-kingdom.png")
-            }else if(this.film.original_language == 'es'){
+            }else if(this.serie.original_language == 'es'){
                 return require("../../assets/img/flat_icon/spain.png")
             }else{
                 return require("../../assets/img/flat_icon/saudi-arabia.png")
@@ -30,10 +30,6 @@ export default {
 }
 </script>
 
-            
-
-
-<style lang='scss' scoped>
+<style>
 
 </style>
-
