@@ -2,6 +2,7 @@
     <ul class="info_film">
         <li>Titolo Originale: {{film.original_title}}</li>
         <li>Titolo: {{film.title}}</li>
+        <li><img :src="getCover('w342')+film.poster_path" alt=""></li>
         <li><img :src="flagLanguage()" alt=""></li>
         <li>Voto: {{film.vote_average}}</li>
     </ul>
@@ -25,6 +26,10 @@ export default {
             }else{
                 return require("../../assets/img/flat_icon/saudi-arabia.png")
             }
+        },
+        getCover(size){
+            return `https://image.tmdb.org/t/p/${size}`
+            
         }
     }
 }
