@@ -2,7 +2,7 @@
     <ul class="info_film">
         <li>Titolo Originale: {{info.original_title}}</li>
         <li>Titolo: {{info.title}}</li>
-        <li>Lingua: <img :src="flagLanguage()" alt=""></li>
+        <li><img :src="flagLanguage()" alt=""></li>
         <li>Voto: {{info.vote_average}}</li>
     </ul>
 </template>
