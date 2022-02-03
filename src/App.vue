@@ -12,10 +12,9 @@ export default {
   components:{
     Main
   }
-  
 }
+  
 </script>
 
 <style lang="scss">
-
 </style>
