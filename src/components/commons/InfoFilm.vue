@@ -17,7 +17,6 @@ export default {
     },
     data(){
         return{
-            star:""
         }
     },
     methods:{
@@ -39,6 +38,7 @@ export default {
     },
     computed:{ 
         getStar : function(){
+            
             return (this.film.vote_average/2).toFixed(0)
             
             
