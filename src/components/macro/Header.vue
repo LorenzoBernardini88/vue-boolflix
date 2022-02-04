@@ -1,5 +1,6 @@
 <template>
     <header>
+        <img src="" alt="">
         <input-text @ricerca="trasmettiData"/>
     </header>
 </template>
