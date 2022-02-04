@@ -24,8 +24,8 @@ export default {
         InfoSerie
     },
     props:{
-        dataFilm:Object,
-        dataSerie:Object
+        dataFilm:Array,
+        dataSerie:Array
     },
     methods:{
         

@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <Header @filtraData="dataApiApp"/>
-    <Main :dataFilm="dataArrayFilm"/>
-    <Main :dataFilm="dataArraySerie"/>
+    <Main :dataFilm="dataArrayFilm" :dataSerie="dataArraySerie"/>
   </div>
 </template>
 
@@ -36,7 +35,7 @@ export default {
             axios.get(this.apiUrlFilm, {
                 params: {
                 api_key:"77b419d801283a9b373f36475ac132b1",
-                query: this.film
+                query: this.inputTextApp
                 }
             })
             .then((risposta)=> {
@@ -52,7 +51,7 @@ export default {
             axios.get(this.apiUrlSerie, {
                     params: {
                     api_key:"77b419d801283a9b373f36475ac132b1",
-                    query: this.film
+                    query: this.inputTextApp
                     }
                 })
                 .then((risposta)=> {
