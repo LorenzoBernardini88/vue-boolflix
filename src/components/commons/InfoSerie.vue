@@ -1,11 +1,14 @@
 <template>
-    <ul class="info_serie">
-        <li>Titolo Originale: {{serie.original_name}}</li>
-        <li>Titolo: {{serie.name}}</li>
-        <li><img :src="getCover('w342')+serie.poster_path" alt=""></li>
-        <li><img :src="flagLanguage()" alt=""></li>
-        <li><i v-for="(elemento,indice) in starArray" :key="indice" class="fas fa-star"></i></li>
-    </ul>
+    <div class="serie_cont">
+        <div class="cover_cont"><img :src="getCover('w342')+serie.poster_path" alt=""></div>
+        <ul class="info_serie">
+            <li>Titolo Originale: {{serie.original_name}}</li>
+            <li>Titolo: {{serie.name}}</li>
+            <li><img :src="flagLanguage()" alt=""></li>
+            <li><i v-for="(elemento,indice) in starArray" :key="indice" class="fas fa-star"></i></li>
+        </ul>
+    </div>
+        
 </template>
 
 <script>

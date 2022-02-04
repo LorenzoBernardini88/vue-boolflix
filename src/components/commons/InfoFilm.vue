@@ -1,12 +1,15 @@
 <template>
-    <ul class="info_film">
-        <li>Titolo Originale: {{film.original_title}}</li>
-        <li>Titolo: {{film.title}}</li>
-        <li><img :src="getCover('w342')+film.poster_path" alt=""></li>
-        <li><img :src="flagLanguage()" alt=""></li>
-        <li><i v-for="(elemento,indice) in starArray" :key="indice" class="fas fa-star"></i></li>
-    </ul>
+    <div class="film_cont">
+        <div class="cover_cont"><img :src="getCover('w342')+film.poster_path" alt=""></div>
+        <ul class="info_film">
+            <li>Titolo Originale: {{film.original_title}}</li>
+            <li>Titolo: {{film.title}}</li>
+            <li><img :src="flagLanguage()" alt=""></li>
+            <li><i v-for="(elemento,indice) in starArray" :key="indice" class="fas fa-star"></i></li>
+        </ul>
+    </div>
 </template>
+        
 
 <script>
 export default {
@@ -59,6 +62,33 @@ export default {
 }
 </script>
             
+<style lang='scss' scoped>
+@import "../../assets/style/vars.scss";
+.film_cont{
+    width: 200px;
+    position: relative;
+    img{
+        width: 200px;
+        height: 100%;
+    }
+    ul{
+        width: 200px;
+        height: 100%;
+        list-style-type: none ;
+        background: $bg-head;
+        color: white;
+        font-size: 15px;
+        position: absolute;
+        top:0px;
+        left: 0px;
+        opacity: 0;
+
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+</style>
 
     
     
@@ -67,9 +97,6 @@ export default {
         
     
 
-<style lang='scss' scoped>
-
-</style>
 
 
 
