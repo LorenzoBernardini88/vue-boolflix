@@ -4,7 +4,7 @@
         <li>Titolo: {{film.title}}</li>
         <li><img :src="getCover('w342')+film.poster_path" alt=""></li>
         <li><img :src="flagLanguage()" alt=""></li>
-        <li></li>
+        <li><i v-for="(elemento,indice) in getStar" :key="indice" class="fas fa-star"></i></li>
     </ul>
 </template>
 
@@ -17,8 +17,7 @@ export default {
     },
     data(){
         return{
-            star:"",
-            vote:""
+            star:""
         }
     },
     methods:{
@@ -36,20 +35,17 @@ export default {
         getCover(size){
             return `https://image.tmdb.org/t/p/${size}`
             
-        },
-        // getStar(){
-        //     for (let index = 0; index < (this.film.vote_average/2).toFixed(0); index++) {
-            
-        //     }
-        // }
+        }
     },
-    // computed:{
-    //     getStar(){
+    computed:{ 
+        getStar : function(){
+            return (this.film.vote_average/2).toFixed(0)
             
-    //         this.star = (this.film.vote_average/2).toFixed(0)
-    //         return this.star
-    //     }
-    // }
+            
+        }
+    }
+        
+    
 }
 </script>
 
