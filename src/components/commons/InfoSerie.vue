@@ -4,7 +4,7 @@
         <li>Titolo: {{serie.name}}</li>
         <li><img :src="getCover('w342')+serie.poster_path" alt=""></li>
         <li><img :src="flagLanguage()" alt=""></li>
-        <li>Voto: {{serie.vote_average}}</li>
+        <li><i v-for="(elemento,indice) in starArray" :key="indice" class="fas fa-star"></i></li>
     </ul>
 </template>
 
@@ -30,6 +30,16 @@ export default {
         getCover(size){
             return `https://image.tmdb.org/t/p/${size}`
             
+        }
+    },
+    computed:{
+        starArray(){
+            const voteArray = []
+            const star = (this.serie.vote_average/2).toFixed(0)
+            for (let index = 0; index < star; index++) {
+                voteArray.push(star)
+            }
+                return voteArray
         }
     }
 }
