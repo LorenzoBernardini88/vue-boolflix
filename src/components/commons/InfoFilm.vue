@@ -4,7 +4,7 @@
         <li>Titolo: {{film.title}}</li>
         <li><img :src="getCover('w342')+film.poster_path" alt=""></li>
         <li><img :src="flagLanguage()" alt=""></li>
-        <li>{{getStar()}}</li>
+        <li><img :src="getStar()" alt=""></li>
     </ul>
 </template>
 
@@ -14,6 +14,11 @@ export default {
     props:{
         film: Object
         
+    },
+    data(){
+        return{
+            vote:""
+        }
     },
     methods:{
         flagLanguage(){
@@ -32,20 +37,22 @@ export default {
             
         },
         getStar(){
-            return(this.film.vote_average/2).toFixed(0)
-            // for (let index = 0; index < this.vote_average; index++) {
-                
-            // }
+            for (let index = 0; index < (this.film.vote_average/2).toFixed(0); index++) {
+                this.vote = require("../../assets/img/star-solid.svg")
+                return this.vote
+            }
         }
-    }
+    },
 }
-        
 </script>
 
-            
-
-
 <style lang='scss' scoped>
-
+    ul li:last-child{
+        width: 16px;
+        height: 16px;
+    }
 </style>
+
+
+
 
