@@ -54,10 +54,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-    ul li:last-child{
-        width: 16px;
-        height: 16px;
-    }
+
 </style>
 
 
