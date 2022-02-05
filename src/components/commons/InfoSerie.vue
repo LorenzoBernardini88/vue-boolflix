@@ -2,10 +2,10 @@
     <div class="serie_cont">
         <div class="cover_cont"><img :src="getCover('w342')+serie.poster_path" alt=""></div>
         <ul class="info_serie">
-            <li>Titolo Originale: {{serie.original_name}}</li>
-            <li>Titolo: {{serie.name}}</li>
-            <li><img :src="flagLanguage()" alt=""></li>
-            <li><i v-for="(elemento,indice) in starArray" :key="indice" class="fas fa-star"></i></li>
+            <li class="title_original">Titolo Originale: {{serie.original_name}}</li>
+            <li class="title">Titolo: {{serie.name}}</li>
+            <li ><img class="flag_img" :src="flagLanguage()" alt=""></li>
+            <li ><i v-for="(elemento,indice) in starArray" :key="indice" class="fas fa-star star_vote"></i></li>
         </ul>
     </div>
         

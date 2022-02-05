@@ -2,10 +2,10 @@
     <div class="film_cont">
         <div class="cover_cont"><img :src="getCover('w342')+film.poster_path" alt=""></div>
         <ul class="info_film">
-            <li>Titolo Originale: {{film.original_title}}</li>
-            <li>Titolo: {{film.title}}</li>
-            <li><img :src="flagLanguage()" alt=""></li>
-            <li><i v-for="(elemento,indice) in starArray" :key="indice" class="fas fa-star"></i></li>
+            <li class="title_original">Titolo Originale: {{film.original_title}}</li>
+            <li class="title">Titolo: {{film.title}}</li>
+            <li><img class="flag_img" :src="flagLanguage()" alt=""></li>
+            <li><i v-for="(elemento,indice) in starArray" :key="indice" class="fas fa-star star_vote"></i></li>
         </ul>
     </div>
 </template>
