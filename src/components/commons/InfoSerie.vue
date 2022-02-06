@@ -1,6 +1,6 @@
 <template>
     <div class="serie_cont">
-        <div class="cover_cont"><img :src="getCover('w342')+serie.poster_path" alt=""></div>
+        <div class="cover_cont"><img :src="getCover('w342')" alt=""></div>
         <ul class="info_serie">
             <li class="title_original">Titolo Originale: {{serie.original_name}}</li>
             <li class="title">Titolo: {{serie.name}}</li>
@@ -31,7 +31,12 @@ export default {
             }
         },
         getCover(size){
-            return `https://image.tmdb.org/t/p/${size}`
+            if(this.serie.poster_path==null){
+                console.log('ciao')
+                return require("../../assets/img/no_cover.png")
+            }else{
+            return `https://image.tmdb.org/t/p/${size}`+ this.serie.poster_path
+            }
             
         }
     },
@@ -49,5 +54,6 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+@import "../../assets/style/vars.scss";
 
 </style>

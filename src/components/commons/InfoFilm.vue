@@ -1,6 +1,6 @@
 <template>
     <div class="film_cont">
-        <div class="cover_cont"><img :src="getCover('w342')+film.poster_path" alt=""></div>
+        <div class="cover_cont"><img :src="getCover('w342')" alt=""></div>
         <ul class="info_film">
             <li class="title_original">Titolo Originale: {{film.original_title}}</li>
             <li class="title">Titolo: {{film.title}}</li>
@@ -36,7 +36,13 @@ export default {
             }
         },
         getCover(size){
-            return `https://image.tmdb.org/t/p/${size}`
+            if(this.film.poster_path==null){
+                console.log('ciao')
+                return require("../../assets/img/no_cover.png")
+            }else{
+            return `https://image.tmdb.org/t/p/${size}`+ this.film.poster_path
+            }
+
             
         },
         // getStar : function(){
@@ -66,17 +72,28 @@ export default {
 @import "../../assets/style/vars.scss";
 .film_cont{
     width: 200px;
+    height: 300px;
     position: relative;
-    img{
+    border-radius:10px;
+    .cover_cont{
+        border-radius:10px;
         width: 200px;
-        height: 100%;
+        height: 300px;
+        img{
+            border-radius:10px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+            
     }
     ul{
         width: 200px;
         height: 100%;
+        border-radius:10px; 
         list-style-type: none ;
         background: $bg-head;
-        color: white;
+        color: #ffffff;
         font-size: 15px;
         position: absolute;
         top:0px;
@@ -85,6 +102,10 @@ export default {
 
         &:hover{
             opacity: 1;
+        }
+        .flag_img{
+            width: 20px;
+            
         }
     }
 }
