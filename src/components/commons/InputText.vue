@@ -39,6 +39,7 @@ export default {
         color: #DC1A28;
         font-weight: 100;
         font-size: 16px;
+        font-weight: 100;
         border: solid 1px #DC1A28;
         padding:5px;
         background:$bg-head;
