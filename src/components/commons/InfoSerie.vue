@@ -5,7 +5,8 @@
             <li class="title_original">Titolo Originale: {{serie.original_name}}</li>
             <li class="title">Titolo: {{serie.name}}</li>
             <li ><img class="flag_img" :src="flagLanguage()" alt=""></li>
-            <li ><i v-for="(elemento,indice) in starArray" :key="indice" class="fas fa-star star_vote"></i></li>
+            <li ><i v-for="elemento in getStar(star)" :key="elemento.id" class="fas fa-star star_vote"></i>
+                <i v-for="elemento in (5-getStar(star))" :key="elemento.id" class="far fa-star star_vote"></i></li>
         </ul>
     </div>
         
@@ -14,6 +15,11 @@
 <script>
 export default {
     name:'infoSerie',
+    data(){
+        return{
+            star:""
+        }
+    },
     props:{
         serie: Object
         
@@ -38,18 +44,23 @@ export default {
             return `https://image.tmdb.org/t/p/${size}`+ this.serie.poster_path
             }
             
+        },
+        getStar(){
+            this.star= Math.ceil(this.serie.vote_average/2)
+            return this.star
         }
+        
     },
-    computed:{
-        starArray(){
-            const voteArray = []
-            const star = (this.serie.vote_average/2).toFixed(0)
-            for (let index = 0; index < star; index++) {
-                voteArray.push(star)
-            }
-                return voteArray
-        }
-    }
+    // computed:{
+    //     starArray(){
+    //         const voteArray = []
+    //         const star = (this.serie.vote_average/2).toFixed(0)
+    //         for (let index = 0; index < star; index++) {
+    //             voteArray.push(star)
+    //         }
+    //             return voteArray
+    //     }
+    // }
 }
 </script>
 

@@ -5,7 +5,10 @@
             <li class="title_original">Titolo Originale: {{film.original_title}}</li>
             <li class="title">Titolo: {{film.title}}</li>
             <li><img class="flag_img" :src="flagLanguage()" alt=""></li>
-            <li><i v-for="(elemento,indice) in starArray" :key="indice" class="fas fa-star star_vote"></i></li>
+            <li><i v-for="elemento in getStar(star)" :key="elemento.id" class="fas fa-star star_vote"></i>
+                <i v-for= "elemento in (5-getStar(star))" :key="elemento.id" class="far fa-star star_vote"></i>
+            </li>
+            
         </ul>
     </div>
 </template>
@@ -45,26 +48,23 @@ export default {
 
             
         },
-        // getStar : function(){
-        //     const voteArray = []
-        //     this.star = (this.film.vote_average/2).toFixed(0)
-        //     for (let index = 0; index < this.star; index++) {
-        //         voteArray.push(this.star)
-        //     }
-        //         return voteArray
-        // }
+        getStar(){
+            this.star= Math.ceil(this.film.vote_average/2)
+            return this.star
+        }
+        
 
     },
-    computed:{
-        starArray(){
-            const voteArray = []
-            const star = (this.film.vote_average/2).toFixed(0)
-            for (let index = 0; index < star; index++) {
-                voteArray.push(star)
-            }
-                return voteArray
-        }
-    }
+    // computed:{
+    //     starArray(){
+    //         const voteArray = []
+    //         const star = (this.film.vote_average/2).toFixed(0)
+    //         for (let index = 0; index < star; index++) {
+    //             voteArray.push(star)
+    //         }
+    //             return voteArray
+    //     }
+    // }
 }
 </script>
             
@@ -105,7 +105,7 @@ export default {
             opacity: 1;
         }
         .flag_img{
-            width: 20px;
+            width: 16px;
             
         }
     }
