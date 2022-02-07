@@ -99,6 +99,7 @@ export default {
         top:0px;
         left: 0px;
         opacity: 0;
+        transition: opacity linear 0.5s;
 
         &:hover{
             opacity: 1;
