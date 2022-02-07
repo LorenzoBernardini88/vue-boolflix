@@ -45,6 +45,9 @@ export default {
     justify-content: center;
     gap:10px;
 }
+h1{
+    color: white;
+}
 
 
 
