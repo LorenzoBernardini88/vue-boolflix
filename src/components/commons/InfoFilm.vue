@@ -6,13 +6,13 @@
             <li class="title">Titolo: {{film.title}}</li>
             <li><img class="flag_img" :src="flagLanguage()" alt=""></li>
             <li><i v-for="elemento in getStar(star)" :key="elemento.id" class="fas fa-star star_vote"></i>
-                <i v-for= "elemento in (5-getStar(star))" :key="elemento.id" class="far fa-star star_vote"></i>
+                <i v-for="elemento in (5-getStar(star))" :key="elemento.id" class="far fa-star star_vote"></i>
             </li>
             
         </ul>
     </div>
 </template>
-        
+
 
 <script>
 export default {
@@ -45,16 +45,16 @@ export default {
             }else{
             return `https://image.tmdb.org/t/p/${size}`+ this.film.poster_path
             }
-
-            
         },
         getStar(){
             this.star= Math.ceil(this.film.vote_average/2)
             return this.star
         }
+    }
         
 
-    },
+
+            
     // computed:{
     //     starArray(){
     //         const voteArray = []
@@ -111,13 +111,6 @@ export default {
     }
 }
 </style>
-
-    
-    
-            
-            
-        
-    
 
 
 

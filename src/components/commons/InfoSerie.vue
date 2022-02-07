@@ -66,5 +66,45 @@ export default {
 
 <style lang='scss' scoped>
 @import "../../assets/style/vars.scss";
+.serie_cont{
+    width: 200px;
+    height: 300px;
+    position: relative;
+    border-radius:10px;
+    .cover_cont{
+        border-radius:10px;
+        width: 200px;
+        height: 300px;
+        img{
+            border-radius:10px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+            
+    }
+    ul{
+        width: 200px;
+        height: 100%;
+        border-radius:10px; 
+        list-style-type: none ;
+        background: $bg-head;
+        color: #ffffff;
+        font-size: 15px;
+        position: absolute;
+        top:0px;
+        left: 0px;
+        opacity: 0;
+        transition: opacity linear 0.5s;
+
+        &:hover{
+            opacity: 1;
+        }
+        .flag_img{
+            width: 16px;
+            
+        }
+    }
+}
 
 </style>
