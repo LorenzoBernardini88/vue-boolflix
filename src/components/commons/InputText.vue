@@ -2,6 +2,7 @@
     <div class="form_cont">
         <input type="text"
         v-model="ValoreText" 
+        @keyup.enter="$emit('ricerca',ValoreText)"
         >
         <a href="#"
         @click.prevent="$emit('ricerca',ValoreText)"

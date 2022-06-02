@@ -8,6 +8,7 @@
             <li><i v-for="elemento in getStar(star)" :key="elemento.id" class="fas fa-star star_vote"></i>
                 <i v-for="elemento in (5-getStar(star))" :key="elemento.id" class="far fa-star star_vote"></i>
             </li>
+            <li>Descrizione: {{film.overview}}</li>
             
         </ul>
     </div>
@@ -100,16 +101,20 @@ export default {
         left: 0px;
         opacity: 0;
         transition: opacity linear 0.5s;
-
-        &:hover{
-            opacity: 1;
+        overflow-y: scroll;
+            &::-webkit-scrollbar-y{
+                display: none;
+            }
+            &:hover{
+                opacity: 1;
+            }
         }
         .flag_img{
             width: 16px;
             
         }
     }
-}
+
 </style>
 
 
