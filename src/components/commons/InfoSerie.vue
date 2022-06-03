@@ -96,14 +96,18 @@ export default {
         left: 0px;
         opacity: 0;
         transition: opacity linear 0.5s;
-
-        &:hover{
-            opacity: 1;
-        }
-        .flag_img{
-            width: 16px;
-            
-        }
+        overflow-y:scroll;
+            &::-webkit-scrollbar {
+            -webkit-appearance: none;
+            }
+            &:hover{
+                opacity: 1;
+            }
+            .flag_img{
+                width: 16px;
+                
+            }
+    
     }
 }
 

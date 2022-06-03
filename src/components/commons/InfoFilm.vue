@@ -76,6 +76,7 @@ export default {
     height: 300px;
     position: relative;
     border-radius:10px;
+    overflow: hidden;
     .cover_cont{
         border-radius:10px;
         width: 200px;
@@ -101,9 +102,9 @@ export default {
         left: 0px;
         opacity: 0;
         transition: opacity linear 0.5s;
-        overflow-y: scroll;
-            &::-webkit-scrollbar-y{
-                display: none;
+        overflow-y:scroll;
+            &::-webkit-scrollbar {
+            -webkit-appearance: none;
             }
             &:hover{
                 opacity: 1;
